@@ -1,6 +1,5 @@
 //  Custom modules
-const ErrorHandler = require("./utils/errorHandler");
-
+const ErrorMiddleWares = require("./middlewares/errors");
 // start express
 const express = require("express");
 const app = express();
@@ -12,5 +11,6 @@ const user = require("./routes/userRoute");
 app.use("/api/v1", user);
 
 // Middlewares
-app.use(ErrorHandler);
+app.use(ErrorMiddleWares);
+// app.use(ErrorHandler);
 module.exports = app;
